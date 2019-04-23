@@ -1,0 +1,69 @@
+    <!--!DOCTYPE html>
+    <html>
+    <head>
+        <title>Simple Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                height: 100%;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="map"></div>
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 52.4113206, lng: 16.9483588},
+                zoom: 18
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5nLDonAhyvc0mNqXW7njtaShpRnd1DCc&callback=initMap"
+            async defer></script>
+    </body>
+    </html-->
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            /* Set the size of the div element that contains the map */
+            #map {
+                height: 650px;  /* The height is 400 pixels */
+                width: 100%;  /* The width is the width of the web page */
+            }
+        </style>
+    </head>
+    <body>
+    <h4>Katedra w Poznaniu</h4>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            // The location of Poznan
+            var poznan = {lat: 52.4113206, lng: 16.9485588};
+            // The map, centered at Poznan
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 18, center: poznan, mapTypeId:'hybrid'});
+                map.setTilt(45);
+            // The marker, positioned at Poznan
+            var marker = new google.maps.Marker({position: poznan, map: map});
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5nLDonAhyvc0mNqXW7njtaShpRnd1DCc&callback=initMap">
+    </script>
+    </body>
+    </html>
